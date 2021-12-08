@@ -1,22 +1,22 @@
 #!/bin/bash
 
 WORKDIR=/sps
-JAR=$WORKDIR/sps-rest-server.jar
+JAR=sps-rest-server.jar
 
 CRED="\e[31m"
 CGREEN="\e[32m"
 CRESET="\e[0m"
 
 start() {
-  java -jar $JAR
+  java -jar $WORKDIR/$JAR
 }
 
 stop() {
-  kill `ps aux | pgrep -f sps-rest-server`
+  kill `ps aux | pgrep -f $JAR`
 }
 
 status() {
-  local pid=`ps aux | pgrep -f sps-rest-server`
+  local pid=`ps aux | pgrep -f $JAR`
 
   if [[ ! -z "$pid" ]]; then
     local host=`netstat -lntp | grep $pid | awk -F ' ' '{ print $4 }'`
