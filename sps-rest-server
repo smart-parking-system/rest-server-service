@@ -8,7 +8,7 @@ CGREEN="\e[32m"
 CRESET="\e[0m"
 
 start() {
-  java -jar $WORKDIR/$JAR
+  java -jar $WORKDIR/$JAR &
 }
 
 stop() {
