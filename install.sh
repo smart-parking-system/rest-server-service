@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-VERSION="v0.1.0"
+VERSION="v0.2.0"
 
 if [[ "`id -u`" != "0" ]]; then
   echo "Please run as root"
